@@ -1,0 +1,7 @@
+{
+  "name": "YoTeLlevoApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
