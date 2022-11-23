@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 
 interface Componente{
   icon:string;
@@ -7,12 +8,11 @@ interface Componente{
 }
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.scss'],
+  selector: 'app-yo-te-llevo',
+  templateUrl: './yo-te-llevo.page.html',
+  styleUrls: ['./yo-te-llevo.page.scss'],
 })
-export class AppComponent {
-  constructor() {}
+export class YoTeLlevoPage implements OnInit {
 
   componentes : Componente[] = [
     {
@@ -36,9 +36,19 @@ export class AppComponent {
       redirecTo:'/historial'
     },
     {
-      icon:'book',
-      name:'Mis Datos',
-      redirecTo:'/mis-datos'
+      icon:'exit',
+      name:'Logout',
+      redirecTo:''
     },
   ]
+
+  constructor(private menuController: MenuController) {}
+
+  ngOnInit() {
+  }
+
+  mostrarMenu(){
+  this.menuController.open('first');
+  }
+
 }

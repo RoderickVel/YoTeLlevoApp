@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>YoTeLlevo!!</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-grid>
+    <ion-col class="ion-text-center" size="12">
+      <img src="assets/Yo te llevo!!.png" class="ion-padding">
+    </ion-col>
+  <ion-row class="ion-align-items-center">
+    <ion-col size="6" class="ion-text-center" offset="3">
+      <ion-button routerLink="/login" expand="block" fill="solid" shape="round">
+        Login
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-align-items-center">
+    <ion-col size="6" class="ion-text-center" offset="3">
+      <ion-button routerLink="/registro" expand="block" fill="solid" shape="round">
+        Registro
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<!--<ion-list>
+  <ion-item *ngFor="let c of componentes"
+            [routerLink]="c.redirecTo"
+            detail=true>
+    <ion-icon [name]="c.icon" slot="start" color="primary"></ion-icon>
+    {{ c.name }}
+  </ion-item>
+</ion-list>-->
+
+</ion-content>

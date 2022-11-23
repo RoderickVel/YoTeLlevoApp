@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/">
+      </ion-back-button>
+      <ion-button (click)="mostrarMenu()" color="primary">
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
+      <ion-button (click)="logout()" color="danger">
+        <ion-icon name="exit">Logout</ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>TuViaje</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" style="text-align:center;">¡Estás de Camino!</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Nombre Conductor</ion-card-title>
+          <ion-card-subtitle>Destino</ion-card-subtitle>
+          <ion-card-subtitle>Hora de llegada</ion-card-subtitle>
+          <ion-button color="success">
+            <ion-icon slot="icon-only" name="share-social"></ion-icon>
+          </ion-button>
+          <ion-button color="danger">
+            <ion-icon slot="icon-only" name="radio"></ion-icon>
+          </ion-button>
+        </ion-card-header>
+      </ion-card>
+      <ion-card>
+        <div id="map"></div>
+        <ion-col style="text-align:center;" *ngFor = "let ubicacion of ubicacion | slice:2:3">
+          <br><br><br>
+            <ion-card-title style="margin-left: 25px; margin-right: 25px;" >{{ ubicacion.label }}</ion-card-title>
+            <ion-card-subtitle>{{ ubicacion.locality }}</ion-card-subtitle>
+        </ion-col>
+    </ion-card>
+    <ion-card>
+      <ion-col style="text-align:center;" *ngFor = "let ubicacion of ubicacion | slice:2:3">
+        <br><br><br>
+          <ion-card-title style="margin-left: 25px; margin-right: 25px;" >{{ ubicacion.label }}</ion-card-title>
+          <ion-card-subtitle>{{ ubicacion.locality }}</ion-card-subtitle>
+      </ion-col>
+  </ion-card>
+    </ion-row>
+  </ion-grid>
+</ion-content>
