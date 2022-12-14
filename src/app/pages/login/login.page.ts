@@ -6,6 +6,9 @@ import { FormGroup,
          FormControl,
          Validators,
          FormBuilder} from '@angular/forms';
+import { UbicacionService } from 'src/app/services/ubicacion.service';
+import { getLongitude } from 'geolib';
+import { RespuestaUbicacion } from '../../interfaces/interfaces';
 
 
 @Component({
@@ -21,7 +24,8 @@ export class LoginPage implements OnInit {
               private navController: NavController,
               private registroService: RegistroserviceService,
               private fb: FormBuilder,
-              private menuController: MenuController) {
+              private menuController: MenuController,
+              private ubicacionService: UbicacionService) {
                 this.formularioLogin = this.fb.group({
                   'correo': new FormControl("",Validators.required),
                   'password': new FormControl("",Validators.required),
@@ -43,6 +47,8 @@ export class LoginPage implements OnInit {
             console.log('ingresadoA');
             localStorage.setItem('ingresado', 'true');
             this.navController.navigateRoot('llevar');
+            
+            
           }else {
             console.log('ingresadoB');
             localStorage.setItem('ingresado', 'true');
